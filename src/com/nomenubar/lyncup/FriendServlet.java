@@ -38,9 +38,6 @@ public class FriendServlet extends HttpServlet {
 			resp.getWriter().println("success!");
 			
 		}
-		
-		
-		
 	}
 	
 	
@@ -49,7 +46,7 @@ public class FriendServlet extends HttpServlet {
 		Query q = new Query("User");
 		PreparedQuery pq = ds.prepare(q);
 		for(Entity e : pq.asIterable()) {
-			if(e.getProperty("email").equals(id)) {
+			if(e.getProperty("id").equals(id)) {
 				return e;
 			}
 		}
